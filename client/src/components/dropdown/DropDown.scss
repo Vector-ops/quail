@@ -1,0 +1,120 @@
+.app__dropdown {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	/* position: relative; */
+
+	font-family: "Syne", sans-serif;
+	cursor: pointer;
+}
+
+.app__dropdown-button-category {
+	width: 302px;
+	height: 50px;
+	border-radius: 20px;
+	font-size: 16px;
+
+	z-index: 1;
+	/* position: relative; */
+
+	padding: 16px 20px 15px 30px;
+
+	border: 2px solid var(--secondary-color);
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+	box-shadow: 6px 7px var(--orange-color);
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.app__dropdown-list-category {
+	width: 302px;
+	border-radius: 20px;
+
+	margin-top: -15px;
+	z-index: 2;
+	/* position: absolute; */
+
+	background-color: var(--primary-color);
+
+	border: 2px solid var(--secondary-color);
+	border-top: none;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+	padding-top: 20px;
+	padding-bottom: 11px;
+
+	list-style: none;
+
+	li {
+		height: 45px;
+		padding-left: 30px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 16px;
+
+		&:hover {
+			background-color: var(--blue-color);
+			color: var(--primary-color);
+		}
+	}
+}
+
+.app__dropdown-button-filter {
+	width: 169.6px;
+	height: 50px;
+	border-radius: 20px;
+	font-size: 16px;
+
+	z-index: 1;
+	/* position: fixed; */
+
+	padding: 16px 20px 15px 30px;
+
+	border: 2px solid var(--secondary-color);
+	background-color: var(--primary-color);
+	color: var(--secondary-color);
+	box-shadow: 6px 7px var(--orange-color);
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.app__dropdown-list-filter {
+	width: 169.6px;
+	border-radius: 20px;
+
+	margin-top: -15px;
+	z-index: 2;
+	/* position: absolute; */
+
+	background-color: var(--primary-color);
+
+	border: 2px solid var(--secondary-color);
+	border-top: none;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+	padding-top: 20px;
+	padding-bottom: 11px;
+
+	list-style: none;
+
+	li {
+		height: 45px;
+		padding-left: 30px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 16px;
+
+		&:hover {
+			background-color: var(--blue-color);
+			color: var(--primary-color);
+		}
+	}
+}
