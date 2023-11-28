@@ -1,0 +1,33 @@
+.app__header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	margin: 50px 75px;
+
+	.app__header-logo {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		gap: 0.5em;
+		cursor: pointer;
+	}
+
+	.app__header-link {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		gap: 1em;
+		cursor: pointer;
+	}
+}
+
+a {
+	text-decoration: none;
+	color: var(--secondary-color);
+}
