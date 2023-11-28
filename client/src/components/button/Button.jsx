@@ -6,7 +6,7 @@ import {
 import React from "react";
 import "./Button.scss";
 
-const Button = ({ variant, text }) => {
+const Button = ({ variant, text, handleClick, type }) => {
 	let buttonClass = "button ";
 
 	const getIcon = (variant) => {
@@ -30,9 +30,6 @@ const Button = ({ variant, text }) => {
 			case "cart":
 				buttonClass += "cart";
 				return <ShoppingCartSimple size={32} />;
-			// case "default":
-			// 	buttonClass += "default";
-			// 	return text === "Google" ? <GoogleLogo size={32} /> : null;
 			default:
 				buttonClass += "default";
 				return null;
@@ -42,7 +39,11 @@ const Button = ({ variant, text }) => {
 	const iconCompinent = getIcon(variant);
 
 	return (
-		<button type="button" className={buttonClass}>
+		<button
+			type={type ? type : "button"}
+			className={buttonClass}
+			onClick={handleClick ? handleClick : null}
+		>
 			{text ? text : ""}
 			{iconCompinent}
 		</button>

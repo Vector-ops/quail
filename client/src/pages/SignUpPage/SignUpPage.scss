@@ -63,6 +63,12 @@
 			box-shadow: 10px 11px var(--blue-color);
 			outline: none;
 		}
+
+		.app__signup-form-error {
+			color: red;
+			font-size: smaller;
+			font-family: "Syne", sans-serif;
+		}
 	}
 
 	.app__signup-form-button {
@@ -74,7 +80,7 @@
 		align-items: center;
 		gap: 20px;
 
-		margin-top: 2em;
+		margin-top: 0em;
 
 		p {
 			font-size: smaller;
