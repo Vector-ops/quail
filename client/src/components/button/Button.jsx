@@ -30,6 +30,9 @@ const Button = ({ variant, text }) => {
 			case "cart":
 				buttonClass += "cart";
 				return <ShoppingCartSimple size={32} />;
+			// case "default":
+			// 	buttonClass += "default";
+			// 	return text === "Google" ? <GoogleLogo size={32} /> : null;
 			default:
 				buttonClass += "default";
 				return null;
