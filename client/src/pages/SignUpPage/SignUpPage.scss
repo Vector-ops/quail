@@ -1,12 +1,12 @@
 .app__signup {
 	background: url("../../assets/cover-nl.png");
 	font-family: "Syne", sans-serif;
-	background-size: 100% auto;
+	background-size: 100vw auto;
 	background-repeat: no-repeat;
 	background-position: left;
 	background-attachment: fixed;
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	color: var(--secondary-color);
 	font-weight: bolder;
 	font-size: larger;
@@ -14,8 +14,8 @@
 }
 
 .app__signup-form {
-	width: 30%;
-	height: 75%;
+	width: 28em;
+	height: 38em;
 
 	background-color: var(--primary-color);
 	border-radius: 20px;

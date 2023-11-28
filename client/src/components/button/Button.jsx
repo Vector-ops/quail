@@ -1,12 +1,13 @@
 import {
 	Binoculars,
 	BookmarkSimple,
+	GithubLogo,
 	ShoppingCartSimple,
 } from "@phosphor-icons/react";
 import React from "react";
 import "./Button.scss";
 
-const Button = ({ variant, text, handleClick, type }) => {
+const Button = ({ variant, text, handleClick, type, icon }) => {
 	let buttonClass = "button ";
 
 	const getIcon = (variant) => {
@@ -26,7 +27,14 @@ const Button = ({ variant, text, handleClick, type }) => {
 				return null;
 			case "circle":
 				buttonClass += "circle";
-				return null;
+				switch (icon) {
+					case "github":
+						return <GithubLogo size={32} />;
+					case "google":
+						return <GoogleLogo size={32} />;
+					default:
+						return null;
+				}
 			case "cart":
 				buttonClass += "cart";
 				return <ShoppingCartSimple size={32} />;
