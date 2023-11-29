@@ -2,6 +2,7 @@ import {
 	Binoculars,
 	BookmarkSimple,
 	GithubLogo,
+	LinkedinLogo,
 	ShoppingCartSimple,
 } from "@phosphor-icons/react";
 import React from "react";
@@ -30,8 +31,8 @@ const Button = ({ variant, text, handleClick, type, icon }) => {
 				switch (icon) {
 					case "github":
 						return <GithubLogo size={32} />;
-					case "google":
-						return <GoogleLogo size={32} />;
+					case "linkedin":
+						return <LinkedinLogo size={32} />;
 					default:
 						return null;
 				}

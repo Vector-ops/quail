@@ -1,7 +1,12 @@
-import React from "react";
+import SearchBar from "../components/searchBar/SearchBar";
 
 const Catalog = () => {
-	return <div>Catalog</div>;
+	return (
+		<div>
+			Catalog
+			<SearchBar />
+		</div>
+	);
 };
 
 export default Catalog;

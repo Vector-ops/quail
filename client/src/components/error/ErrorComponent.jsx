@@ -1,7 +1,7 @@
 import React from "react";
 import error from "../../assets/error-gif.png";
 import Button from "../button/Button";
-import "./Error.scss";
+import "./ErrorComponent.scss";
 
 const ErrorComponent = ({ message, text }) => {
 	const githubRedirect = () => {

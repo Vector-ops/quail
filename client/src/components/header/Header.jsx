@@ -4,23 +4,23 @@ import {
 	ShoppingCartSimple,
 } from "@phosphor-icons/react";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./Header.scss";
 
 const Header = () => {
 	return (
 		<nav className="app__header ">
-			<Link className="app__header-logo" to="/">
+			<NavLink className="app__header-logo" to="/">
 				<BookOpen size={32} />
 				<h1>Quail</h1>
-			</Link>
+			</NavLink>
 			<div className="app__header-link ">
-				<Link to="/favourites">
-					<BookmarkSimple size={32} />
-				</Link>
-				<Link to="/cart">
-					<ShoppingCartSimple size={32} />
-				</Link>
+				<NavLink to="/favourites">
+					<BookmarkSimple size={32} className="hover-blue" />
+				</NavLink>
+				<NavLink to="/cart">
+					<ShoppingCartSimple size={32} className="hover-blue" />
+				</NavLink>
 			</div>
 		</nav>
 	);

@@ -1,0 +1,31 @@
+.app__footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	min-width: 90vw;
+
+	margin-left: 4vw;
+	margin-right: 4vw;
+	margin-bottom: 20px;
+	bottom: 0;
+	left: 0;
+	position: relative;
+
+	border-top: 2px dotted var(--secondary-color);
+	padding-top: 20px;
+
+	@media screen and (max-width: 430px) {
+		margin: 0px 14px 20px 14px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 15px;
+	}
+
+	.app__footer-links {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 10px;
+	}
+}

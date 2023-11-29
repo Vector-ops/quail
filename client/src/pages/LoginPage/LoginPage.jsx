@@ -29,7 +29,7 @@ const LoginPage = () => {
 			setError(err.response.status);
 			if (error === 401)
 				setErrorMsg("Invalid username, email or password");
-			else setErrorMsg(err.response.data.error.message);
+			else throw Error(err.response.data.error.message);
 		}
 	};
 
