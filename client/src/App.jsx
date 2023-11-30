@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import "./App.scss";
 import RootLayout from "./layouts/RootLayout";
+import { homePageLoader } from "./loaders/homePageLoader";
 import Catalog from "./pages/Catalog";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import Home from "./pages/Home";
@@ -22,7 +23,7 @@ const router = createBrowserRouter(
 				element={<RootLayout />}
 				errorElement={<ErrorPage />}
 			>
-				<Route index element={<Home />} />
+				<Route index element={<Home />} loader={homePageLoader} />
 				<Route path="cart" element={<Catalog />} />
 				<Route path="*" element={<NotFound />} />
 			</Route>
