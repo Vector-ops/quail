@@ -1,0 +1,121 @@
+.app__book-detail {
+	width: 70vw;
+	height: 70vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.app__book-detail-image {
+		width: 25em;
+		height: 35em;
+		margin-right: 2rem;
+
+		img {
+			width: 100%;
+			height: 100%;
+
+			border-radius: 10px;
+		}
+	}
+
+	.app__book-detail-info {
+		width: 40vw;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1em;
+
+		.app__book-detail-title {
+			width: 100%;
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			font-size: 2em;
+			font-family: "Unica One", sans-serif;
+			font-weight: bold;
+		}
+
+		.app__book-detail-des {
+			width: 100%;
+			height: 100%;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+			font-family: "Syne", sans-serif;
+			gap: 2em;
+
+			p {
+				width: 100%;
+				height: 100%;
+				border: 2px dashed var(--secondary-color);
+				border-radius: 20px;
+				box-shadow: 9px 8px var(--lightgray-color);
+			}
+
+			.author {
+				height: 2.5em;
+				font-size: 1.5em;
+				padding: 0.5em 1em 0.5em 1em;
+			}
+
+			.description {
+				font-size: 1.2em;
+				padding: 0.5em 1em 0.5em 1em;
+			}
+		}
+
+		.app__book-detail-price-count {
+			width: 100%;
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			margin-top: 2em;
+
+			.price {
+				color: var(--orange-color);
+				font-size: 36px;
+				font-family: "Syne", sans-serif;
+			}
+		}
+
+		.app__book-detail-buttons {
+			width: 100%;
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
+
+.counter {
+	width: 104px;
+	height: 35px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5em;
+
+	p {
+		font-size: 1.3em;
+		font-family: "Syne", sans-serif;
+		width: 2.5em;
+		height: 1.8em;
+		text-align: center;
+		border: 2px solid var(--secondary-color);
+		border-radius: 10px;
+	}
+}
+
+.disabled {
+	opacity: 0.5;
+}
