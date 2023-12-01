@@ -46,24 +46,47 @@
 
 	.app__searchbar-icon {
 		position: absolute;
-		left: 51em;
+
 		margin-top: 5px;
 
-		@media screen and (max-width: 1280px) {
-			left: 37.25em;
-		}
+		// @media screen and (min-width: 1920px) {
+		// 	left: 81.5em;
+		// }
 
-		@media screen and (max-width: 1024px) {
-			left: 31em;
-		}
+		// @media screen and (max-width: 1280px) {
+		// 	left: 37.25em;
+		// }
 
-		@media screen and (max-width: 430px) {
-			left: 83vw;
-		}
+		// @media screen and (max-width: 1024px) {
+		// 	left: 31em;
+		// }
+
+		// @media screen and (max-width: 430px) {
+		// 	left: 83vw;
+		// }
 
 		&:hover {
 			cursor: pointer;
 			color: var(--blue-color);
 		}
 	}
+}
+
+.icon-home {
+	left: 51.25em;
+	@media screen and (max-width: 1280px) {
+		left: 37.25em;
+	}
+
+	@media screen and (max-width: 1024px) {
+		left: 31em;
+	}
+
+	@media screen and (max-width: 430px) {
+		left: 83vw;
+	}
+}
+
+.icon-search {
+	left: 81.5em;
 }

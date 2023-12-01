@@ -1,10 +1,12 @@
-import SearchBar from "../components/searchBar/SearchBar";
+import { useParams } from "react-router-dom";
+import SearchComponent from "../components/search/SearchComponent";
 
 const Catalog = () => {
+	const { search } = useParams();
+
 	return (
 		<div>
-			Catalog
-			<SearchBar />
+			<SearchComponent data={search} />
 		</div>
 	);
 };
