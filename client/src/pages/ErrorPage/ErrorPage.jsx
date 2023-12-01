@@ -4,8 +4,7 @@ import ErrorComponent from "../../components/error/ErrorComponent";
 
 const ErrorPage = () => {
 	const error = useRouteError();
-
-	console.log(error);
+	// console.log(error);
 
 	if (error?.status === 404) {
 		return (
@@ -21,8 +20,9 @@ const ErrorPage = () => {
 	return (
 		<div>
 			<ErrorComponent
-				message="Something went wrong"
+				message={error.message || "Something went wrong"}
 				text="Please refresh the page or try again later"
+				showGithub={error?.status === 500 ? true : false}
 			/>
 		</div>
 	);

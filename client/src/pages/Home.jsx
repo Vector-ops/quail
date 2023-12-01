@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Carousel from "../components/carousel/Carousel";
 import Categories from "../components/categories/Categories";
-import DropDown from "../components/dropdown/DropDown";
 import Hero from "../components/hero/Hero";
 
 const Home = () => {
