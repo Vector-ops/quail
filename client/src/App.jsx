@@ -13,6 +13,7 @@ import ErrorPage from "./pages/ErrorPage/ErrorPage";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import NotFound from "./pages/NotFound/NotFound";
+import ProductDetail from "./pages/ProductDetail";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 
 const router = createBrowserRouter(
@@ -25,12 +26,14 @@ const router = createBrowserRouter(
 			>
 				<Route index element={<Home />} loader={homePageLoader} />
 				<Route path="cart" element={<Catalog />} />
-				<Route path="*" element={<NotFound />} />
+				<Route path="book/:bookId" element={<ProductDetail />} />
+				<Route path="search/:search" element={<Catalog />} />
 			</Route>
 			<Route path="/auth" errorElement={<ErrorPage />}>
 				<Route path="login" element={<LoginPage />} />
 				<Route path="signup" element={<SignUpPage />} />
 			</Route>
+			<Route path="*" element={<NotFound />} />
 		</>
 	)
 );

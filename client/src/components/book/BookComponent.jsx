@@ -3,9 +3,13 @@ import Button from "../button/Button";
 import "./BookComponent.scss";
 
 const BookComponent = ({ data }) => {
+	const handleClick = () => {
+		window.location.href = `/book/${data.id}`;
+	};
+
 	return (
 		<div className="app__book">
-			<div className="app__book-cover">
+			<div className="app__book-cover" onClick={handleClick}>
 				<img
 					src={data.image ? data.image : defaultBook}
 					alt="book cover"

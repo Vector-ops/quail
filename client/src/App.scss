@@ -12,3 +12,37 @@
 	align-items: center;
 	margin-bottom: 1rem;
 }
+
+.app__product {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.app__product-viewmore {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+
+	margin: 5em 0;
+}
+
+.app__product-viewmore-title {
+	margin: 0 0 5em 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding-left: 3em;
+}
+
+.loading-suggestions {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
