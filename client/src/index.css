@@ -75,3 +75,8 @@ main {
 	font-family: "Unica One", sans-serif;
 	font-size: 2.5rem;
 }
+
+.img-shadow {
+	box-shadow: 2px 2px 10px var(--secondary-color);
+	border-radius: 10px;
+}

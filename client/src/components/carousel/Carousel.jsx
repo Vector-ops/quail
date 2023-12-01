@@ -1,5 +1,4 @@
 import { Sparkle } from "@phosphor-icons/react";
-import "react-multi-carousel/lib/styles.css";
 import defaultBook from "../../assets/book-default.png";
 import "./Carousel.scss";
 
@@ -21,6 +20,12 @@ const CarouselComponent = () => {
 		},
 	};
 
+	const breakPoints = [
+		{ width: 3000, itemsToShow: 6 },
+		{ width: 1024, itemsToShow: 4 },
+		{ width: 464, itemsToShow: 1 },
+	];
+
 	return (
 		<div className="app__carousel">
 			<h1>Trending Books</h1>
@@ -36,10 +41,10 @@ const CarouselComponent = () => {
 				itemsToScroll={1}
 				easing="ease-in-out"
 				focusOnSelect={true}
-				breakPoints={responsive}
+				// breakPoints={breakPoints}
 				initialActiveIndex={0}
 				initialFirstItem={0}
-				autoPlaySpeed={3000}
+				autoPlaySpeed={6000}
 			>
 				<div className="app__carousel-section-card">
 					<img src={defaultBook} alt="book" />

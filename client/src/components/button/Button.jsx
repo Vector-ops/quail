@@ -8,8 +8,11 @@ import {
 import React from "react";
 import "./Button.scss";
 
-const Button = ({ variant, text, handleClick, type, icon }) => {
+const Button = ({ variant, text, handleClick, type, icon, width, height }) => {
 	let buttonClass = "button ";
+
+	width = width ? width : null;
+	height = height ? height : null;
 
 	const getIcon = (variant) => {
 		switch (variant) {
@@ -52,6 +55,7 @@ const Button = ({ variant, text, handleClick, type, icon }) => {
 			type={type ? type : "button"}
 			className={buttonClass}
 			onClick={handleClick ? handleClick : null}
+			style={width && { width: width, height: height }}
 		>
 			{text ? text : ""}
 			{iconCompinent}
