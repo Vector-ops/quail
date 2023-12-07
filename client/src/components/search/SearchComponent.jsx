@@ -51,7 +51,7 @@ const SearchComponent = ({ data, categories, bookmark }) => {
 		const fetchResults = async () => {
 			try {
 				const response = await axios.get(
-					`http://localhost:3000/api/books/${
+					`${import.meta.env.VITE_APP_SERVER_URL}/api/books/${
 						bookmark ? "bookmarks" : "search"
 					}/${search}`,
 					{
