@@ -6,6 +6,20 @@
 	width: 100%;
 	gap: 2em;
 
+	.app__search-bar {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1em;
+
+		.app__search-bar-clear {
+			&:hover {
+				cursor: pointer;
+				color: var(--blue-color);
+			}
+		}
+	}
+
 	.app__search-header {
 		display: flex;
 		justify-content: space-between;
