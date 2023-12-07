@@ -9,10 +9,29 @@ const BookComponent = ({ data }) => {
 		window.location.href = `/book/${data.id}`;
 	};
 
+	const handleAddToCart = async () => {
+		try {
+			const response = await axios.post(
+				"${import.meta.env.VITE_APP_SERVER_URL}/api/books/cart",
+				{
+					bookId: data.id,
+				},
+				{
+					withCredentials: true,
+				}
+			);
+			if (!response.data) {
+				throw new Error("Error adding to cart");
+			}
+		} catch (error) {
+			console.error("Error adding to cart:", error);
+		}
+	};
+
 	const toggleBookmark = async () => {
 		try {
 			const response = await axios.post(
-				"http://localhost:3000/api/books/bookmarks",
+				"${import.meta.env.VITE_APP_SERVER_URL}/api/books/bookmarks",
 				{
 					bookId: data.id,
 				},
@@ -37,17 +56,20 @@ const BookComponent = ({ data }) => {
 				/>
 			</div>
 			<div className="app__book-info">
-				<h3
-					data-tooltip-content={data.title}
-					data-tooltip-place="top"
-					data-tooltip-id={data.id}
-				>
-					{data.title}
-				</h3>
-				<Tooltip id={data.id} />
+				<div className="app__book-info-title-author">
+					<h3
+						data-tooltip-content={data.title}
+						data-tooltip-place="top"
+						data-tooltip-id={data.id}
+					>
+						{data.title}
+					</h3>
+					<p className="app__book-info-author">{data.author}</p>
+					<Tooltip id={data.id} />
+				</div>
 				<div className="app__book-info-option">
 					<div className="app__book-info-option-price">
-						<p>&#8377;{data.BookPrice.sellingPrice}</p>
+						&#8377;{data.BookPrice.sellingPrice}
 					</div>
 					<Button
 						type="button"
@@ -58,7 +80,7 @@ const BookComponent = ({ data }) => {
 				<Button
 					type="button"
 					variant="cart"
-					handleClick={() => console.log("cart")}
+					handleClick={handleAddToCart}
 				/>
 			</div>
 		</div>

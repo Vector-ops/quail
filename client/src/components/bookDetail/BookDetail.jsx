@@ -1,23 +1,29 @@
-import { MinusCircle, PlusCircle } from "@phosphor-icons/react";
-import { useState } from "react";
+import axios from "axios";
 import defaultBook from "../../assets/book-default.png";
 import Button from "../button/Button";
+import Counter from "../counter/Counter";
 import "./BookDetail.scss";
 
 const BookDetail = ({ data }) => {
-	const [count, setCount] = useState(1);
-
-	const increaseCount = () => {
-		if (count < data.count) {
-			setCount(count + 1);
+	const toggleAddToCart = async () => {
+		try {
+			const response = await axios.post(
+				"${import.meta.env.VITE_APP_SERVER_URL}/api/books/cart",
+				{
+					bookId: data.id,
+				},
+				{
+					withCredentials: true,
+				}
+			);
+			if (!response.data) {
+				throw new Error("Error adding to cart");
+			}
+			toggleCartItem(data.id);
+		} catch (error) {
+			console.error("Error adding to cart:", error);
 		}
 	};
-	const decreaseCount = () => {
-		if (count > 1) {
-			setCount(count - 1);
-		}
-	};
-
 	return (
 		<div className="app__book-detail">
 			<div className="app__book-detail-image img-shadow">
@@ -38,23 +44,10 @@ const BookDetail = ({ data }) => {
 				</div>
 				<div className="app__book-detail-price-count">
 					<p className="price">
-						&#8377;{data.BookPrice.sellingPrice}
+						&#8377;{data.BookPrice.sellingPrice.toFixed(2)}
 					</p>
-					<div className="counter">
-						<MinusCircle
-							size={24}
-							onClick={decreaseCount}
-							className={count > 1 ? "" : "disabled"}
-							style={{ cursor: "pointer" }}
-						/>
-						<p>{count}</p>
-						<PlusCircle
-							size={24}
-							onClick={increaseCount}
-							className={count < data.count ? "" : "disabled"}
-							style={{ cursor: "pointer" }}
-						/>
-					</div>
+
+					<Counter data={data.count} />
 				</div>
 				<div className="app__book-detail-buttons">
 					<Button
@@ -62,6 +55,7 @@ const BookDetail = ({ data }) => {
 						type="button"
 						width="15em"
 						height="1.9em"
+						handleClick={toggleAddToCart}
 					/>
 					<Button
 						variant="inverse"

@@ -95,28 +95,3 @@
 		}
 	}
 }
-
-.counter {
-	width: 104px;
-	height: 35px;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 0.5em;
-	user-select: none;
-
-	p {
-		font-size: 1.3em;
-		font-family: "Syne", sans-serif;
-		width: 2.5em;
-		height: 1.8em;
-		text-align: center;
-		border: 2px solid var(--secondary-color);
-		border-radius: 10px;
-	}
-}
-
-.disabled {
-	opacity: 0.5;
-}

@@ -4,7 +4,6 @@
 	align-items: center;
 	justify-content: center;
 	gap: 1em;
-	// width: 200px;
 	width: 12.5em;
 
 	.app__book-cover {
@@ -28,14 +27,33 @@
 		justify-content: center;
 		gap: 0.5em;
 
-		h3 {
-			font-family: "Syne", sans-serif;
-			font-size: 24px;
-			color: var(--secondary-color);
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
-			max-width: 200px;
+		.app__book-info-title-author {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			h3 {
+				font-family: "Syne", sans-serif;
+				font-weight: 500;
+				font-size: 24px;
+				color: var(--secondary-color);
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				max-width: 200px;
+			}
+
+			p {
+				font-family: "Syne", sans-serif;
+				font-size: 0.9em;
+				color: var(--secondary-color);
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				max-width: 200px;
+				font-weight: 500;
+			}
 		}
 
 		.app__book-info-option {
@@ -56,9 +74,7 @@
 				border: 2px solid var(--secondary-color);
 				border-radius: 20px;
 
-				p {
-					padding-top: 0.1em;
-				}
+				padding-top: 0.1em;
 			}
 		}
 	}
