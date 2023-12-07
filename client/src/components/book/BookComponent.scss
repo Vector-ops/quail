@@ -4,6 +4,8 @@
 	align-items: center;
 	justify-content: center;
 	gap: 1em;
+	// width: 200px;
+	width: 12.5em;
 
 	.app__book-cover {
 		width: 200px;
@@ -25,6 +27,16 @@
 		align-items: center;
 		justify-content: center;
 		gap: 0.5em;
+
+		h3 {
+			font-family: "Syne", sans-serif;
+			font-size: 24px;
+			color: var(--secondary-color);
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			max-width: 200px;
+		}
 
 		.app__book-info-option {
 			display: flex;
