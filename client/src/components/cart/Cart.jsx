@@ -14,7 +14,7 @@ const Cart = ({ cartOpen, toggleCart }) => {
 		const getBooks = async () => {
 			try {
 				const response = await axios.get(
-					"${import.meta.env.VITE_APP_SERVER_URL}/api/books/cart",
+					`${import.meta.env.VITE_APP_SERVER_URL}/api/books/cart`,
 					{
 						withCredentials: true,
 					}

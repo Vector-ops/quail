@@ -35,7 +35,7 @@ const LoginPage = () => {
 
 	const googleSignin = async () => {
 		window.open(
-			"${import.meta.env.VITE_APP_SERVER_URL}/api/auth/google",
+			`${import.meta.env.VITE_APP_SERVER_URL}/api/auth/google`,
 			"_self"
 		);
 	};

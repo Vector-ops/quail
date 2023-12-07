@@ -12,7 +12,7 @@ const BookComponent = ({ data }) => {
 	const handleAddToCart = async () => {
 		try {
 			const response = await axios.post(
-				"${import.meta.env.VITE_APP_SERVER_URL}/api/books/cart",
+				`${import.meta.env.VITE_APP_SERVER_URL}/api/books/cart`,
 				{
 					bookId: data.id,
 				},
@@ -31,7 +31,7 @@ const BookComponent = ({ data }) => {
 	const toggleBookmark = async () => {
 		try {
 			const response = await axios.post(
-				"${import.meta.env.VITE_APP_SERVER_URL}/api/books/bookmarks",
+				`${import.meta.env.VITE_APP_SERVER_URL}/api/books/bookmarks`,
 				{
 					bookId: data.id,
 				},

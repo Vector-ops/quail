@@ -8,7 +8,7 @@ const Cartbook = ({ data, toggleCartItem }) => {
 	const toggleAddToCart = async () => {
 		try {
 			const response = await axios.post(
-				"${import.meta.env.VITE_APP_SERVER_URL}/api/books/cart",
+				`${import.meta.env.VITE_APP_SERVER_URL}/api/books/cart`,
 				{
 					bookId: data.id,
 				},

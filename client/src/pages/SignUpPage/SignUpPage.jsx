@@ -27,7 +27,7 @@ const SignUpPage = () => {
 					name: name,
 				}
 			);
-			console.log(response);
+
 			if (response.status === 200) window.open("/auth/login", "_self");
 		} catch (err) {
 			console.error(err);

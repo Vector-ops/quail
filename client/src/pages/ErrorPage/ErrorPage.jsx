@@ -4,7 +4,6 @@ import ErrorComponent from "../../components/error/ErrorComponent";
 
 const ErrorPage = () => {
 	const error = useRouteError();
-	// console.log(error);
 
 	if (error?.status === 404) {
 		return (

@@ -24,20 +24,15 @@ const Header = () => {
 				<NavLink to="/favourites" className="center">
 					<BookmarkSimple size={32} className="hover-blue" />
 				</NavLink>
-				{/* <NavLink to="/cart" className="center"> */}
+
 				<ShoppingCartSimple
 					size={32}
 					className="hover-blue"
 					onClick={() => toggleCart()}
 				/>
-				{/* </NavLink> */}
 			</div>
 
-			{cartOpen && (
-				// <div className="cart-overlay">
-				<Cart toggleCart={toggleCart} cartOpen={cartOpen} />
-				// </div>
-			)}
+			{cartOpen && <Cart toggleCart={toggleCart} cartOpen={cartOpen} />}
 		</nav>
 	);
 };
