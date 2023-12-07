@@ -16,7 +16,7 @@ const LoginPage = () => {
 		if (username === "" || password === "") return;
 		try {
 			const response = await axios.post(
-				"http://localhost:3000/api/auth/login",
+				`${import.meta.env.VITE_APP_SERVER_URL}/api/auth/login`,
 				{
 					username: username,
 					password: password,
@@ -34,7 +34,10 @@ const LoginPage = () => {
 	};
 
 	const googleSignin = async () => {
-		window.open("http://localhost:3000/api/auth/google", "_self");
+		window.open(
+			"${import.meta.env.VITE_APP_SERVER_URL}/api/auth/google",
+			"_self"
+		);
 	};
 
 	return (
