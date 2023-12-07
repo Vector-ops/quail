@@ -62,6 +62,7 @@ main {
 }
 
 .hover-blue {
+	cursor: pointer;
 	&:hover {
 		color: var(--blue-color);
 	}
