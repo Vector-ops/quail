@@ -1,0 +1,35 @@
+.app__success {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2em;
+
+	img {
+		width: 100%;
+		max-width: 400px;
+	}
+
+	.app__success-footer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1em;
+
+		.app__success-footer-text {
+			margin-bottom: 2em;
+
+			h1 {
+				font-family: "Unica One", sans-serif;
+				font-size: 40px;
+			}
+
+			h3 {
+				font-family: "Syne", sans-serif;
+				font-size: 24px;
+				text-align: center;
+			}
+		}
+	}
+}
