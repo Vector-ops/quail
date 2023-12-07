@@ -3,6 +3,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	background-color: var(--primary-color);
 
 	margin: 25px 75px 0px 75px;
 	border-radius: 20px;
@@ -49,4 +50,9 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.cart-overlay {
+	z-index: 999;
+	background-color: rgba(0, 0, 0, 0.5);
 }
