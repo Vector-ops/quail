@@ -19,7 +19,7 @@ const ProductDetail = () => {
 		const fetchBook = async () => {
 			try {
 				const response = await axios.get(
-					`http://localhost:3000/api/books/${bookId}`
+					`${import.meta.env.VITE_APP_SERVER_URL}/api/books/${bookId}`
 				);
 				if (!response.data) {
 					throw new Error("Book not found");
@@ -44,7 +44,9 @@ const ProductDetail = () => {
 			const fetchSuggestions = async () => {
 				try {
 					const response = await axios.get(
-						`http://localhost:3000/api/books/suggestions`,
+						`${
+							import.meta.env.VITE_APP_SERVER_URL
+						}/api/books/suggestions`,
 						{
 							params: {
 								author: book.author,
