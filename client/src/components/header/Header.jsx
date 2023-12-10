@@ -3,7 +3,7 @@ import {
 	BookmarkSimple,
 	ShoppingCartSimple,
 } from "@phosphor-icons/react";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Cart from "../cart/Cart";
 import "./Header.scss";
@@ -14,6 +14,7 @@ const Header = () => {
 	const toggleCart = () => {
 		setCartOpen(!cartOpen);
 	};
+
 	return (
 		<nav className="app__header">
 			<NavLink className="app__header-logo" to="/">
@@ -32,7 +33,7 @@ const Header = () => {
 				/>
 			</div>
 
-			{cartOpen && <Cart toggleCart={toggleCart} cartOpen={cartOpen} />}
+			{cartOpen && <Cart toggleCart={toggleCart} />}
 		</nav>
 	);
 };

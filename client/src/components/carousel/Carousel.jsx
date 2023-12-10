@@ -3,8 +3,23 @@ import defaultBook from "../../assets/book-default.png";
 import "./Carousel.scss";
 
 import Carousel from "@itseasy21/react-elastic-carousel";
+import { useEffect, useState } from "react";
+import axios from "../../config/axiosConfig";
 
 const CarouselComponent = () => {
+	const [books, setBooks] = useState([]);
+	const [loading, setLoading] = useState(false);
+
+	useEffect(() => {
+		setLoading(true);
+		const getCarouselBooks = async () => {
+			const res = await axios.get("/api/books/carousel");
+			setBooks(res.data);
+			setLoading(false);
+		};
+		getCarouselBooks();
+	}, []);
+
 	const responsive = {
 		desktop: {
 			breakpoint: { max: 3000, min: 1024 },
@@ -27,54 +42,47 @@ const CarouselComponent = () => {
 	];
 
 	return (
-		<div className="app__carousel">
-			<h1>Trending Books</h1>
-			<p>
-				<Sparkle size={16} />
-				Drag to explore
-			</p>
-			<Carousel
-				className="app__carousel-component"
-				itemsToShow={6}
-				showArrows={false}
-				enableAutoPlay={true}
-				itemsToScroll={1}
-				easing="ease-in-out"
-				focusOnSelect={true}
-				// breakPoints={breakPoints}
-				initialActiveIndex={0}
-				initialFirstItem={0}
-				autoPlaySpeed={6000}
-			>
-				<div className="app__carousel-section-card">
-					<img src={defaultBook} alt="book" />
+		<>
+			{loading ? (
+				<div>Loading...</div>
+			) : (
+				<div className="app__carousel">
+					<h1>Trending Books</h1>
+					<p>
+						<Sparkle size={16} />
+						Drag to explore
+					</p>
+					<Carousel
+						className="app__carousel-component"
+						itemsToShow={6}
+						showArrows={false}
+						enableAutoPlay={true}
+						itemsToScroll={1}
+						easing="ease-in-out"
+						focusOnSelect={true}
+						// breakPoints={breakPoints}
+						initialActiveIndex={0}
+						initialFirstItem={0}
+						autoPlaySpeed={6000}
+					>
+						{books.map((book) => (
+							<div
+								className="app__carousel-section-card"
+								key={book.id}
+								onClick={() =>
+									(window.location.href = `/book/${book.id}`)
+								}
+							>
+								<img
+									src={book.image ? book.image : defaultBook}
+									alt="book"
+								/>
+							</div>
+						))}
+					</Carousel>
 				</div>
-				<div className="app__carousel-section-card">
-					<img src={defaultBook} alt="book" />
-				</div>
-				<div className="app__carousel-section-card">
-					<img src={defaultBook} alt="book" />
-				</div>
-				<div className="app__carousel-section-card">
-					<img src={defaultBook} alt="book" />
-				</div>
-				<div className="app__carousel-section-card">
-					<img src={defaultBook} alt="book" />
-				</div>
-				<div className="app__carousel-section-card">
-					<img src={defaultBook} alt="book" />
-				</div>
-				<div className="app__carousel-section-card">
-					<img src={defaultBook} alt="book" />
-				</div>
-				<div className="app__carousel-section-card">
-					<img src={defaultBook} alt="book" />
-				</div>
-				<div className="app__carousel-section-card">
-					<img src={defaultBook} alt="book" />
-				</div>
-			</Carousel>
-		</div>
+			)}
+		</>
 	);
 };
 

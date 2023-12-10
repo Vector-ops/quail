@@ -1,5 +1,5 @@
-import axios from "axios";
 import defaultBook from "../../assets/book-default.png";
+import axios from "../../config/axiosConfig";
 import Button from "../button/Button";
 import Counter from "../counter/Counter";
 import "./BookDetail.scss";

@@ -33,9 +33,13 @@
 
 		padding-top: 1em;
 
-		img {
-			border-radius: 10px;
-			box-shadow: 2px 2px 10px var(--secondary-color);
+		.app__carousel-section-card {
+			cursor: pointer;
+
+			img {
+				border-radius: 10px;
+				box-shadow: 2px 2px 10px var(--secondary-color);
+			}
 		}
 	}
 }

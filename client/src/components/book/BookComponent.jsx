@@ -1,6 +1,6 @@
-import axios from "axios";
 import { Tooltip } from "react-tooltip";
 import defaultBook from "../../assets/book-default.png";
+import axios from "../../config/axiosConfig";
 import Button from "../button/Button";
 import "./BookComponent.scss";
 

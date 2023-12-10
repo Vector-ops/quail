@@ -14,7 +14,7 @@ const Success = () => {
 				<Button
 					variant="default"
 					type="button"
-					text="Conitnue Shopping"
+					text="Continue Shopping"
 					handleClick={() => (window.location = "/")}
 				/>
 			</div>

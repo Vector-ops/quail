@@ -1,14 +1,17 @@
 import { CaretLeft } from "@phosphor-icons/react";
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "../../config/axiosConfig";
 import Button from "../button/Button";
 import Cartbook from "../cartBook/Cartbook";
 import "./Cart.scss";
 
-const Cart = ({ cartOpen, toggleCart }) => {
+const Cart = ({ setCartOpen, toggleCart }) => {
 	const [books, setBooks] = useState([]);
 	const [loading, setLoading] = useState(false);
+	const navigate = useNavigate();
 
+	// load books from cart
 	useEffect(() => {
 		setLoading(true);
 		const getBooks = async () => {
@@ -30,8 +33,28 @@ const Cart = ({ cartOpen, toggleCart }) => {
 		getBooks();
 	}, []);
 
+	// remove book from cart
 	const toggleCartItem = (bookId) => {
 		setBooks((prev) => prev.filter((book) => book.id !== bookId));
+	};
+
+	// buy books in cart
+	const buyBooks = async () => {
+		try {
+			if (books.length === 0) return;
+			const response = await axios.post(
+				`${import.meta.env.VITE_APP_SERVER_URL}/api/books/buy`
+			);
+			if (response.status === 200) {
+				setBooks([]); // empty cart
+				toggleCart(); // close cart
+				navigate("/success");
+			} else {
+				throw new Error("Something went wrong");
+			}
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	return (
@@ -84,7 +107,11 @@ const Cart = ({ cartOpen, toggleCart }) => {
 							</div>
 						</div>
 						<div className="app__cart-footer-order">
-							<Button text="Pay with stripe" variant="inverse" />
+							<Button
+								text="Pay with stripe"
+								variant="inverse"
+								handleClick={buyBooks}
+							/>
 						</div>
 					</div>
 				</>

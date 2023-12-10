@@ -1,5 +1,5 @@
 import { CaretDown } from "@phosphor-icons/react";
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import "./DropDown.scss";
 
 const DropDown = ({ variant, list }) => {
@@ -15,7 +15,7 @@ const DropDown = ({ variant, list }) => {
 		}
 	};
 
-	React.useEffect(() => {
+	useEffect(() => {
 		document.addEventListener("click", closeDropdown);
 		return () => {
 			document.removeEventListener("click", closeDropdown);
