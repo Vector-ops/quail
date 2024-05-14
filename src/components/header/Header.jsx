@@ -3,7 +3,7 @@ import {
 	BookmarkSimple,
 	ShoppingCartSimple,
 } from "@phosphor-icons/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import Cart from "../cart/Cart";
 import "./Header.scss";

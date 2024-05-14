@@ -19,6 +19,7 @@
 
 	background-color: white;
 	z-index: 1000;
+	border-left: 2px solid var(--secondary-color);
 
 	.app__cart-header {
 		display: flex;
@@ -70,7 +71,7 @@
 
 		border-top-left-radius: 20px;
 		border-top: 2px solid var(--secondary-color);
-		border-left: 2px solid var(--secondary-color);
+		// border-left: 2px solid var(--secondary-color);
 		padding-bottom: 2em;
 
 		.app__cart-footer-total {

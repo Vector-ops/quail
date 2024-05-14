@@ -91,10 +91,10 @@ const SearchComponent = ({ data, categories, bookmark }) => {
 						</>
 					)}
 				</h2>
-				<div className="app__search-header-dropdown">
+				{/* <div className="app__search-header-dropdown">
 					<DropDown variant="category" list={categories} />
 					<DropDown variant="filter" list={filter} />
-				</div>
+				</div> */}
 			</div>
 			<div className="app__search-results">
 				{loading ? (
